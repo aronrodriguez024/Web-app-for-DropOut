@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="sellerindex.css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar"> 
+            <div class="icon">
+                <img src="dropoutlogo.png" width="200" height="200" alt="Logo Image" style="position: relative; left: -10px; top: -40px;">
+
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="javascript:history.back()">← BACK TO LOGIN</a></li>
+                </ul>
+            </div>
+
+          
+        </div>
+        <div class="content" style="position: relative; top: 100px;">
+            <h1>Welcome to our<br><span>online marketplace!</span><br></h1>
+            <br>
+            <br>
+            <p class="par">Selling here is simple and rewarding. Whether you're new or experienced,<br>
+                our platform makes it easy to showcase your products, reach a global audience, <br>
+                and grow your business. Join us today and start selling!</p>
+
+            
+
+                <div class="form">
+                    <h2>Login Here</h2>
+                    <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+                    <input type="password" id="password" name="" placeholder="Enter Your Password" required>
+                    <button class="btnn" id="loginButton"><a href="sellerindex.html">Login</a></button>
+                    
+
+                    <p class="link">Don't have an account?<br>
+                        Sign up <a href="signup.html">here</a></p>
+                </div>
+        </div>
+    </div>
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+<script>
+   
+    var loginButton = document.getElementById("loginButton");
+
+
+    loginButton.addEventListener("click", function() {
+   
+        var emailInput = document.getElementById("email");
+        var passwordInput = document.getElementById("password");
+
+       
+        if (emailInput.value.trim() === "" || passwordInput.value.trim() === "") {
+
+            event.preventDefault();
+            alert("Please fill in both email and password fields.");
+        }
+    });
+</script>
+
+</body>
+</html>

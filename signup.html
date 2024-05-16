@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign up</title>
+    <link rel="stylesheet" href="signupstyle.css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar"> 
+            <div class="icon">
+                <img src="dropoutlogo.png" width="200" height="200" alt="Logo Image" style="position: relative; left: -10px; top: -40px;">
+
+            </div>
+
+
+            <div class="signup">
+                <h2>Sign up Here</h2>
+                <form action="#" method="post" class="signup-form" onsubmit="return validateForm()">
+                    <input type="fullname" name="fullname" id="fullname" placeholder="Full Name" required>
+                    <input type="email" name="email" id="email" placeholder="Enter Your Email Here" required>
+                    <input type="password" name="password" id="password" placeholder="Create Password" required><br>
+
+                    <div>
+                        
+                        <label for="birthdate" class="label" style="font-size: 17px; font-family: Arial; color: white; position: relative; top:10px;">Date of Birth:</label><br>
+                        <select id="day" name="day" required style="margin-top: 20px;">
+                            <option value="">Day</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                        <select id="month" name="month" required>
+                            <option value="">Month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                            
+                        </select>
+                        <select id="year" name="year" required>
+                            <option value="">Year</option>
+                            <!-- Options for years -->
+                            <!-- Generate options for years dynamically using JavaScript -->
+                        </select>
+                    </div>
+
+                    <label for="terms">
+                        <input type="checkbox" id="terms" name="terms" required style="transform: scale(1.0); position: absolute; left: -83px; top: 280px;">
+                    </label>
+                    
+                    <p style="font-family: arial; font-size: 14px; color: white; position: absolute; top: 313px; left: 60px;">I agree to <a href="termsandconditions.html" style="text-decoration: none; color: brown;">terms and conditions</a></p>
+
+                    <button class="btnn1" type="submit"><a href="home.html">Sign Up</a></button>
+                </form>
+            </div>
+            
+            <p class="text" style="position: relative;">
+                <span style="position: absolute; top: 460px; left: 53.5%; transform: translateX(-50%); font-family: Arial; color: white; font-size: 17px; text-align: center;">Already have an account?<br>login <a href="index.html
+                    " style="color: brown; text-decoration: none;">here</a> instead</span>
+            </p>
+            
+        </div>
+    </div>
+    </div>
+
+
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script>
+        function validateForm() {
+            var fullname = document.getElementById('fullname').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            if (fullname === '' || email === '' || password === '') {
+                alert('All fields are required!');
+                return false;
+            }
+            return true;
+        }
+
+      
+        var selectYear = document.getElementById('year');
+        var currentYear = new Date().getFullYear();
+        for (var i = currentYear; i >= 1900; i--) {
+            var option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            selectYear.appendChild(option);
+        }
+    </script>
+
+<script>
+    window.onload = function() {
+        // Retrieve query parameters from URL
+        var urlParams = new URLSearchParams(window.location.search);
+        // Populate form fields with query parameter values
+        document.getElementById('fullname').value = urlParams.get('fullname') || '';
+        document.getElementById('email').value = urlParams.get('email') || '';
+        document.getElementById('password').value = urlParams.get('password') || '';
+    };
+</script>
+
+</body>
+</html>
